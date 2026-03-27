@@ -4,6 +4,7 @@ import { Box } from '@semcore/base-components';
 import Pagination from '@semcore/pagination';
 import ActionBar from './ActionBar';
 import './App.css';
+import '../node_modules/@semcore/core/lib/theme/themes/auto.css';
 import { data as defaultData, columns as defaultColumns } from './data';
 import React from 'react';
 import { NoData } from '@semcore/widget-empty';
@@ -77,6 +78,7 @@ const App = () => {
           onSortChange={handleSortChange}
           defaultGridTemplateColumnWidth='1fr'
           aria-label='Fruits and vegetables'
+          headerProps={{ sticky: true, top: 44 }}
           uniqueRowKey='name'
           ref={tableRef}
           selectedRows={selectedRows}

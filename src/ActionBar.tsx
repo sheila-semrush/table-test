@@ -32,6 +32,10 @@ const ActionBar = ({ ariaMessage, selectedRowsDisplay, columns, setColumns, hand
       h={44}
       gap={6}
       px={3}
+      position='sticky'
+      top={0}
+      zIndex={50}
+      style={{ backgroundColor: 'var(--intergalactic-bg-primary-neutral, #fff)' }}
     >
       <ScreenReaderOnly role='status' aria-live='polite'>
         {ariaMessage}
@@ -48,7 +52,7 @@ const ActionBar = ({ ariaMessage, selectedRowsDisplay, columns, setColumns, hand
           </Button>
         </>
       )}
-      <DropdownMenu multiselect>
+      <DropdownMenu multiselect placement='bottom-end'>
         <DropdownMenu.Trigger
           ml='auto'
           tag={Button}
@@ -58,7 +62,7 @@ const ActionBar = ({ ariaMessage, selectedRowsDisplay, columns, setColumns, hand
         >
           Manage columns
         </DropdownMenu.Trigger>
-        <DropdownMenu.Menu aria-labelledby='menu-trigger'>
+        <DropdownMenu.Menu>
           {columns.map(column => (
             <DropdownMenu.Item
               key={column.name}
