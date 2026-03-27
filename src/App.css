@@ -1,4 +1,5 @@
 body {
   font-family: Inter, sans-serif;
   padding: 16px;
+  background-color: var(--intergalactic-bg-secondary-neutral, #f4f5f9);
 }

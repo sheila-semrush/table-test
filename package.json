@@ -12,6 +12,7 @@
   "dependencies": {
     "@semcore/base-components": "^16.4.2",
     "@semcore/button": "^16.0.12",
+    "@semcore/card": "^16.1.12",
     "@semcore/data-table": "^16.5.3",
     "@semcore/dropdown-menu": "^16.2.2",
     "@semcore/icon": "^16.7.4",

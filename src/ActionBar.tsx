@@ -29,13 +29,17 @@ const ActionBar = ({ ariaMessage, selectedRowsDisplay, columns, setColumns, hand
       role='region'
       aria-label='Table action bar'
       alignItems='center'
-      h={44}
       gap={6}
-      px={3}
+      px={4}
+      py={2}
       position='sticky'
       top={0}
       zIndex={50}
-      style={{ backgroundColor: 'var(--intergalactic-bg-primary-neutral, #fff)' }}
+      style={{
+        backgroundColor: 'var(--intergalactic-bg-primary-neutral, #fff)',
+        borderTopLeftRadius: 'var(--intergalactic-surface-rounded, 6px)',
+        borderTopRightRadius: 'var(--intergalactic-surface-rounded, 6px)',
+      }}
     >
       <ScreenReaderOnly role='status' aria-live='polite'>
         {ariaMessage}
