@@ -5,7 +5,7 @@ import { Text } from '@semcore/typography';
 import Pagination from '@semcore/pagination';
 import React from 'react';
 
-type SortableColumn = Exclude<keyof typeof data[0], 'keyword'>;
+type SortableColumn = Exclude<keyof typeof data[0], 'name' | 'category' | 'season'>;
 
 const App = () => {
   const [sort, setSort] = React.useState<DataTableSort<keyof typeof data[0]>>(['temp', 'desc']);
@@ -147,25 +147,25 @@ const columns = [
   {
     name: 'category',
     children: 'Category',
-    sortable: true,
+    // sortable: true,
   },
   {
     name: 'season',
     children: 'Season',
-    sortable: 'asc'
+    // sortable: 'asc'
   },
   {
     name: 'weight',
     children: 'Weight (g)',
     gtcWidth: 'max-content',
     justifyContent: 'right',
-    sortable: 'desc',
+    sortable: true,
   },
   {
     name: 'temp',
     children: 'Storage temp. (℃)',
     gtcWidth: 'max-content',
     justifyContent: 'right',
-    sortable: 'desc',
+    sortable: true,
   },
 ]
