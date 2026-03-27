@@ -33,14 +33,12 @@ const App = () => {
     setSort(newSort as DataTableSort<SortableColumn>);
   };
   const [selectedRows, setSelectedRows] = React.useState<string[]>([]);
-  // const [selectedRowsDisplay, setSelectedRowsDisplay] = React.useState(0);
   const [ariaMessage, setAriaMessage] = React.useState('');
   const [currentPage, setCurrentPage] = React.useState(0);
 
   const handleChangeSelectedRows = (value: string[]) => {
     setSelectedRows(value);
     if (!selectedRows.length) setAriaMessage('Actions are available before the table');
-    // if (value.length) setSelectedRowsDisplay(value.length);
     console.log(selectedRows)
   };
 
@@ -54,6 +52,7 @@ const App = () => {
     setData(newData);
     handleChangeSelectedRows([]);
     tableRef.current?.focus();
+    setAriaMessage('Rows deleted');
   };
 
   const limit = 10;
