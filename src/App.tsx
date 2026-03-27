@@ -51,8 +51,8 @@ const App = () => {
     const newData = data.filter(row => !selectedRows.includes(row.name))
     setData(newData);
     handleChangeSelectedRows([]);
-    tableRef.current?.focus();
     setAriaMessage('Rows deleted');
+    tableRef.current?.focus();
   };
 
   const limit = 10;
