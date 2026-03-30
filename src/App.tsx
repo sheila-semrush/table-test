@@ -14,7 +14,7 @@ const App = () => {
   const [data, setData] = React.useState(defaultData);
 
   type SortableColumn = keyof typeof data[0];
-  const [sort, setSort] = React.useState<DataTableSort<keyof typeof data[0]>>(['name', 'asc']);
+  const [sort, setSort] = React.useState<DataTableSort<SortableColumn>>(['name', 'asc']);
   const sortedData = React.useMemo(
     () =>
       [...data].sort((aRow, bRow) => {
@@ -28,7 +28,7 @@ const App = () => {
     [sort, data],
   );
 
-  const handleSortChange: (sort: DataTableSort<string>, e?: React.SyntheticEvent) => void = (
+  const handleSortChange: (sort: DataTableSort<SortableColumn>, e?: React.SyntheticEvent) => void = (
     newSort,
   ) => {
     setSort(newSort as DataTableSort<SortableColumn>);
