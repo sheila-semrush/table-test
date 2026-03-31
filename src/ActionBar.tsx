@@ -67,16 +67,17 @@ const ActionBar = ({ ariaMessage, selectedRowsDisplay, columns, setColumns, hand
           Manage columns
         </DropdownMenu.Trigger>
         <DropdownMenu.Menu>
-          {columns.map(column => (
-            <DropdownMenu.Item
-              key={column.name}
-              selected={column.enabled}
-              onClick={() => handleColumn(column.name)}
-              disabled={column.name === 'name'}
-            >
-              {column.children}
-            </DropdownMenu.Item>
-          ))}
+          {columns
+            .filter(column => column.name !== 'name')
+            .map(column => (
+              <DropdownMenu.Item
+                key={column.name}
+                selected={column.enabled}
+                onClick={() => handleColumn(column.name)}
+              >
+                {column.children}
+              </DropdownMenu.Item>
+            ))}
         </DropdownMenu.Menu>
       </DropdownMenu>
     </Flex>
